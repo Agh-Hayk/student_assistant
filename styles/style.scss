@@ -1,0 +1,176 @@
+//libs
+@import '~antd/dist/antd.css';
+
+$activeColor: #364d79;
+
+// ant
+.main-layout {
+    header {
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        // border-bottom: 1px solid #364d798f;
+        box-shadow: 0 5px 12px 4px rgb(0 0 0 / 9%);
+        height: unset;
+
+        .ant-menu {
+            width: 100%;
+
+            @media only screen and (max-width: 780px) {
+                width: 10%;
+            }
+        }
+
+        .logo {
+            font-size: 45px;
+            color: $activeColor;
+            margin-right: 30px;
+        }
+    }
+}
+
+.ant-layout-content {
+    background: #ffffff;
+    padding-bottom: 60px !important;
+}
+
+.ant-carousel {
+    background-color: $activeColor;
+    margin-bottom: 60px;
+}
+
+.carusel-content {
+    height: 200px;
+    color: #fff;
+    line-height: 160px;
+    text-align: center;
+    background: $activeColor;
+}
+
+.ant-layout-header {
+    padding: 0 24px;
+
+    @media only screen and (max-width: 780px) {
+        height: 64px !important;
+    }
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item:hover,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu:hover,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-active,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-active,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-open,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-open,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-selected,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-selected {
+    a {
+        color: $activeColor;
+        font-weight: 500;
+    }
+
+    color: $activeColor;
+
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-open::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-open::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-selected::after,
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-selected::after {
+    border-bottom: 1px solid $activeColor;
+
+    @media only screen and (max-width: 780px) {
+        border-bottom: unset;
+    }
+}
+
+.ant-collapse {
+    width: 60%;
+
+    @media only screen and (max-width: 780px) {
+        width: 100%;
+    }
+
+
+}
+
+
+.ant-card-head {
+    background-color: $activeColor;
+    color: white;
+}
+
+.ant-menu-submenu-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .anticon {
+        font-size: 30px;
+
+        svg {
+            transform: rotate(90deg);
+            border: 1px solid $activeColor;
+            border-radius: 50%;
+            padding: 5px;
+        }
+    }
+
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: $activeColor;
+    color: white;
+
+    a {
+        color: white;
+    }
+}
+
+.main-layout {
+    min-height: 100vh;
+}
+
+.ant-layout-footer {
+    background-color: $activeColor;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    margin-top: auto;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+.ant-collapse>.ant-collapse-item>.ant-collapse-header .ant-collapse-header-text {
+    color: $activeColor;
+    font-weight: 600;
+}
+
+.ant-tabs-ink-bar {
+    background: $activeColor;
+}
+
+.grid-card {
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
+
+    @media only screen and (max-width: 1366px) {
+        width: 33.3%;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 780px) {
+        width: 100%;
+    }
+}
