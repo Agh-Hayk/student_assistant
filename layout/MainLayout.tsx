@@ -1,4 +1,4 @@
-import { RocketOutlined, QuestionCircleOutlined, GlobalOutlined, DingtalkOutlined } from '@ant-design/icons';
+import { RocketOutlined, QuestionCircleOutlined, GlobalOutlined, DingtalkOutlined, BarChartOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd'
 import { Header, Content, Footer } from 'antd/lib/layout/layout'
 import Link from 'next/link';
@@ -31,6 +31,11 @@ const MainLayout: FC<MainLayoutInterface> = ({ children }) => {
             label: <Link href='/stories'>Պատմություններ</Link>,
             key: '/stories',
             icon: <RocketOutlined />,
+        },
+        {
+            label: <Link href='/statistics'>Վերլուծություն</Link>,
+            key: '/statistics',
+            icon: <BarChartOutlined />,
         }
     ]
 

@@ -1,10 +1,15 @@
+import { BookOutlined, BookTwoTone, SmileOutlined, SoundTwoTone, TrophyTwoTone, UserOutlined } from '@ant-design/icons';
+import { Avatar, Card, Carousel, Timeline } from 'antd';
+import Meta from 'antd/lib/card/Meta';
 import type { NextPage } from 'next'
-import MainLayout from '../layout/MainLayout';
-import { Carousel, Card, Empty, Rate, Statistic, Avatar } from 'antd';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import MainLayout from '../../layout/MainLayout';
 
+const View: NextPage = () => {
 
-const Stroies: NextPage = () => {
+    const [select, setSelect] = useState<any>('')
+    const router = useRouter();
 
     const cards = [
         {
@@ -131,32 +136,60 @@ const Stroies: NextPage = () => {
         }
     ];
 
-    const router = useRouter()
+    useEffect(() => {
+        if (router.query?.id) {
+            const selectCard: any = cards.filter((el: any) => {
+                return el.id == router.query?.id
+            })
+
+            setSelect(selectCard[0])
+        }
+
+    }, [router.query?.id])
+
 
 
     return (
         <MainLayout>
-            <Card title="Պատմություններ">
-                {
-                    cards.map((el: any, index: any) => {
-                        return (
-                            <Card.Grid
-                                key={index}
-                                className='grid-card'
-                                onClick={() => {
-                                    router.push("/story/" + el.id);
-                                }}
-                            >
-                                <Avatar src={el.avatar} size={180} />
-                                <h3 style={{ 'marginTop': '20px' }}>{el.header}</h3>
-                                <p>{el.desc}</p>
-                            </Card.Grid>
-                        )
-                    })
-                }
-            </Card>
+            <Timeline style={{ 'maxWidth': '1100px', 'margin': '0 auto' }}>
+                <Timeline.Item color="green" dot={<UserOutlined />}>
+                    <h2>{select?.header}</h2>
+                    {/* <Card className='story-card' style={{ width: '100%', marginTop: 16 }}>
+                        <Meta
+                            avatar={}
+                            title={select?.header}
+                            description={<>
+                                <br />
+                                <TrophyTwoTone twoToneColor={'#ffd98e'} className='heartbeat' style={{ 'fontSize': '70px' }} />
+                            </>}
+                        />
+                    </Card> */}
+                    <Avatar src={select?.avatar} size={180} />
+                </Timeline.Item>
+                <Timeline.Item dot={<BookOutlined />}>
+                    <h2>{select.desc}</h2>
+
+                    <p>
+                        {select?.text}
+                    </p>
+                </Timeline.Item>
+                <Timeline.Item>
+                    {/* <h3>ՏԵՍԱԴԱՐԱՆ</h3>
+                    <Carousel autoplay>
+                        <div>
+                            <img src="/svg/p1.jpg" style={{ 'width': '100%', 'height': '400px', 'objectFit': 'contain' }} alt="UI" />
+                        </div>
+                        <div>
+                            <img src="/svg/p2.jpg" style={{ 'width': '100%', 'height': '400px', 'objectFit': 'contain' }} alt="UI" />
+                        </div>
+                        <div>
+                            <img src="/svg/p3.jpg" style={{ 'width': '100%', 'height': '400px', 'objectFit': 'contain' }} alt="UI" />
+                        </div>
+                    </Carousel> */}
+                </Timeline.Item>
+            </Timeline>
         </MainLayout>
     )
 }
 
-export default Stroies
+export default View

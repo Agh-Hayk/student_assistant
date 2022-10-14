@@ -1,54 +1,14 @@
+import { FileImageOutlined, InfoCircleOutlined, SearchOutlined } from '@ant-design/icons';
 import { Carousel, Timeline } from 'antd';
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router';
 import MainLayout from '../../layout/MainLayout';
 
-const View: NextPage = () => {
-    // const router = useRouter();
-
-    // const id: any = router.query?.id;
-
-    // const cards = [
-    //     {
-    //         id: 1,
-    //         header: "ՊՈՐՏՈՒԻ ՀԱՄԱԼՍԱՐԱՆ (ՊՈՐՏՈՒԳԱԼԻԱ)",
-    //         desc: "Էրազմուս միջազգային կրեդիտային շարժունության ծրագրի շրջանակներում 2014 թվականից Վանաձորի պետական համալսարանը համագործակցում է Պորտուի համալսարանի հետ: Պորտուի համալսարանը հիմնվել է 1911 թ. մարտի 22-ին: Այն ուսանողների թվով և հետազոտական հնարավորություններով Պորտուգալիայի պետական երկրորդ համալսարանն է:",
-    //         rate: 5,
-    //         students: 26372
-    //     },
-    //     {
-    //         id: 2,
-    //         header: "Header",
-    //         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    //         rate: 4.5,
-    //         students: 36192
-    //     },
-    //     {
-    //         id: 3,
-    //         header: "Header",
-    //         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    //         rate: 4,
-    //         students: 12423
-    //     },
-    //     {
-    //         id: 4,
-    //         header: "Header",
-    //         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    //         rate: 3.5,
-    //         students: 89732
-    //     },
-    // ]
-
-    // const selectCard: any = cards.filter((el: any)=>{
-    //     return el.id = id
-    // })
-
-
+const View1: NextPage = () => {
     return (
         <MainLayout>
             <Timeline style={{ 'maxWidth': '1100px', 'margin': '0 auto' }}>
                 <img src="/svg/img1.jpg" style={{ 'width': '100%', 'height': '400px', 'objectFit': 'cover', 'marginBottom': '30px' }} alt="UI" />
-                <Timeline.Item>
+                <Timeline.Item color="red" dot={<InfoCircleOutlined />}>
                     <h2>ՊՈՐՏՈՒԻ ՀԱՄԱԼՍԱՐԱՆ (ՊՈՐՏՈՒԳԱԼԻԱ)</h2>
 
                     <p>
@@ -60,7 +20,7 @@ const View: NextPage = () => {
                         «Մեկ օրվա ընթացքում ես անցա ավելի քան 4549կմ, որպեսզի ականատես լինեմ Պորտուի փողոցների հրաշքին, ստանամ կրթություն Պորտուի համալսարանի բանասիրության ֆակուլտետի հյուրընկալ պատերի ներսում, ձեռք բերեմ հրաշալի ընկերներ տարբեր միջոցառումների և Էրազմուս ուսանողական խորհրդի կողմից կազմակերպված էքսկուրսիաների ժամանակ, որպեսզի մեկ հարկի տակ ապրելով՝ ձեռք բերեմ մի նոր ընտանիք, նոր հիշողություններ, որոնք կպահպանվեն ամբողջ կյանքիս ընթացքում, որպեսզի գամ որպես մարդ, սակայն ներկայանամ որպես մի ամբողջ ազգ: Հայաստանն իմ հայրենիքն է, իսկ Պորտուգալիան՝ սրտիս երկիրը: Էրազմուս + ծրագիրն ինձ դարձրել է ավելի փորձառու՝ հնարավորություն տալով սովորել այն, ինչ չի կարելի սովորել ոչ մի համալսարանում և գտնել ոչ մի գրքում», նշում է Լուսինե Մանուկյանը, որը 2017 թ. շարժունության ծրագրի շրջանակներում ուսումնառություն է ստացել Պորտոյի համալսարանի բանասիրության ֆակուլտետում:
                     </p>
                 </Timeline.Item>
-                <Timeline.Item>
+                <Timeline.Item color="blue" dot={<FileImageOutlined />}>
                     <h3>ՏԵՍԱԴԱՐԱՆ</h3>
                     <Carousel autoplay>
                         <div>
@@ -74,7 +34,7 @@ const View: NextPage = () => {
                         </div>
                     </Carousel>
                 </Timeline.Item>
-                <Timeline.Item>
+                <Timeline.Item color='orange' dot={<SearchOutlined />}> 
                     <h3>ՊՈՐՏՈԻԻ ՀԱՄԱԼՍԱՐԱՆՈՒՄ ՇԱՐԺՈՒՆՈՒԹՅԱՆ ՊԱՅՄԱՆՆԵՐԸ</h3>
 
                     <p>
@@ -109,9 +69,10 @@ const View: NextPage = () => {
                     </p>
 
                 </Timeline.Item>
+                <Timeline.Item color="blue"></Timeline.Item>
             </Timeline>
         </MainLayout>
     )
 }
 
-export default View
+export default View1

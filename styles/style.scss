@@ -5,6 +5,8 @@ $activeColor: #364d79;
 
 // ant
 .main-layout {
+    max-width: 1980px;
+    margin: 0 auto;
     header {
         background: white;
         display: flex;
@@ -178,3 +180,78 @@ $activeColor: #364d79;
 .us-card:hover {
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%), 0 5px 12px 4px rgb(0 0 0 / 9%)
 }
+
+.story-card{
+    border:none;
+
+    .ant-card-body{
+        padding: 24px 24px 0 24px;
+    }
+}
+
+.ant-tree-show-line .ant-tree-switcher-line-icon{
+    display: none;
+}
+.ant-tree.ant-tree-directory .ant-tree-treenode-selected .ant-tree-switcher{
+    opacity: 0;
+}
+.ant-tree.ant-tree-directory .ant-tree-treenode-selected:hover::before, .ant-tree.ant-tree-directory .ant-tree-treenode-selected::before{
+    background-color: #364e79;
+
+    svg{
+        fill: red;
+    }
+}
+
+.ant-tree.ant-tree-directory .ant-tree-treenode:hover::before{
+    background: none !important;
+}
+
+.ant-table-expanded-row.ant-table-expanded-row-level-1{
+    td{
+        p{
+            padding-left: 50px;
+        }
+    }
+}
+
+.heartbeat {
+	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+	        animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+              transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+              transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+              transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+  }
+  
