@@ -28,7 +28,7 @@ const MainLayout: FC<MainLayoutInterface> = ({ children }) => {
             icon: <QuestionCircleOutlined />,
         },
         {
-            label: <Link href='/stories'>Պատմություններ</Link>,
+            label: <Link href='/stories'>Հաջողված պատմություններ</Link>,
             key: '/stories',
             icon: <RocketOutlined />,
         },
